@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "investments#index"
   # Routes for the Investment resource:
   # CREATE
   get "/investments/new", :controller => "investments", :action => "new"

@@ -1,0 +1,1 @@
+{"name":"IMDb Template","repository":"https://github.com/sheaver/imdb_template","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}

@@ -1,6 +1,6 @@
 class InvestmentsController < ApplicationController
   def index
-    @investments = Investment.all
+    @investments = Investment.page(params[:page]).per(10)
 
     render("investments/index.html.erb")
   end

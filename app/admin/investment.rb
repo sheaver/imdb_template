@@ -1,5 +1,7 @@
 ActiveAdmin.register Investment do
 
+ permit_params :name, :entity, :sponsor, :asset_type, :geography, :industry, :real_estate, :current_value
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

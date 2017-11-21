@@ -1,0 +1,99 @@
+<!-- Validation failure messages -->
+<% if @investment.errors.any? %>
+  <% @investment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Investment</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_investment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @investment.name %>">
+      </div>
+
+      <!-- Label and input for entity -->
+      <div class="form-group">
+        <label for="entity" class="control-label">
+          Entity
+        </label>
+
+        <input type="text" id="entity" name="entity" placeholder="Entity" class="form-control" value="<%= @investment.entity %>">
+      </div>
+
+      <!-- Label and input for sponsor -->
+      <div class="form-group">
+        <label for="sponsor" class="control-label">
+          Sponsor
+        </label>
+
+        <input type="text" id="sponsor" name="sponsor" placeholder="Sponsor" class="form-control" value="<%= @investment.sponsor %>">
+      </div>
+
+      <!-- Label and input for asset_type -->
+      <div class="form-group">
+        <label for="asset_type" class="control-label">
+          Asset type
+        </label>
+
+        <input type="text" id="asset_type" name="asset_type" placeholder="Asset type" class="form-control" value="<%= @investment.asset_type %>">
+      </div>
+
+      <!-- Label and input for geography -->
+      <div class="form-group">
+        <label for="geography" class="control-label">
+          Geography
+        </label>
+
+        <input type="text" id="geography" name="geography" placeholder="Geography" class="form-control" value="<%= @investment.geography %>">
+      </div>
+
+      <!-- Label and input for industry -->
+      <div class="form-group">
+        <label for="industry" class="control-label">
+          Industry
+        </label>
+
+        <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @investment.industry %>">
+      </div>
+
+      <!-- Label and input for real_estate -->
+      <div class="checkbox">
+        <label for="real_estate">
+          <input type="checkbox" id="real_estate" name="real_estate" value="1" <%= "checked" if @investment.real_estate %>>
+          Real estate
+        </label>
+      </div>
+
+      <!-- Label and input for current_value -->
+      <div class="form-group">
+        <label for="current_value" class="control-label">
+          Current value
+        </label>
+
+        <input type="text" id="current_value" name="current_value" placeholder="Current value" class="form-control" value="<%= @investment.current_value %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Investment
+      </button>
+      or
+      <a href="/investments">Cancel</a>
+    </form>
+  </div>
+</div>

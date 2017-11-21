@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Investment #<%= @investment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @investment.name %></dd>
+
+      <dt>Entity</dt>
+      <dd><%= @investment.entity %></dd>
+
+      <dt>Sponsor</dt>
+      <dd><%= @investment.sponsor %></dd>
+
+      <dt>Asset type</dt>
+      <dd><%= @investment.asset_type %></dd>
+
+      <dt>Geography</dt>
+      <dd><%= @investment.geography %></dd>
+
+      <dt>Industry</dt>
+      <dd><%= @investment.industry %></dd>
+
+      <dt>Real estate</dt>
+      <dd><%= @investment.real_estate %></dd>
+
+      <dt>Current value</dt>
+      <dd><%= @investment.current_value %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/investments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/investments/<%= @investment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_investment/<%= @investment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class InvestmentsController < ApplicationController
   def index
-    @investments = Investment.page(params[:page]).per(10)
+    @q = Investment.ransack(params[:q])
+    @investments = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("investments/index.html.erb")
   end
